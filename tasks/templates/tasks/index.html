@@ -1,0 +1,14 @@
+{% extends "tasks/base.html" %}
+{% block title %}Task List{% endblock %}
+{% block content %}
+    <h1>Task List</h1>
+
+    <ul>
+        {% for task in tasks %}
+        <li>{% if task.task_complete %}<s>{{ task.task_name }}</s> - <a href="{{ task.pk }}/update">&check;</a>{% else %}{{ task.task_name }} - <a href="{{ task.pk }}/update">Edit</a> | <a href="{{ task.pk }}/delete">Delete</a>{% endif %}</li>
+        {% empty %}
+        <li>No tasks available.</li>
+        {% endfor %}<br>
+        <li><a href="{% url 'tasks:add_task' %}">Add new task.</a></li>
+    </ul>
+{% endblock %}
