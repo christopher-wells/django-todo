@@ -11,7 +11,7 @@ class Task(models.Model):
         return self.task_name
     
     class Meta:
-        ordering = ["date_task_added"]
+        ordering = ['date_task_added']
 
     def get_absolute_url(self):
         return reverse('tasks:index')

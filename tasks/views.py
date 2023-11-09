@@ -12,11 +12,11 @@ class TaskListView(ListView):
     
 class CreateTaskView(CreateView):
     model = Task
-    fields = ["task_name"]
+    fields = ['task_name']
 
 class UpdateTaskView(UpdateView):
     model = Task
-    fields = ["task_name", "task_complete"]
+    fields = ['task_name', 'task_complete']
 
 class DeleteTaskView(DeleteView):
     model = Task
